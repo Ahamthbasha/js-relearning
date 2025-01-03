@@ -617,3 +617,216 @@ y(x)
 // console.log(weakSetObject.has(objectOne))
 // weakSetObject.delete(objectTwo)
 // console.log(weakSetObject.has(objectTwo))
+
+//callback
+// function java(){
+//     console.log("ahamathbasha knows java")
+// }
+
+// setTimeout(()=>{
+//     java()
+// },3000)
+
+// var start=((data)=>{
+//     console.log("Data",data)
+// })
+
+// var end=function(callback){
+//     callback("callback is working")
+// }
+
+// end(start)
+
+//find
+
+// const arr=[1,2,2]
+
+// let first=arr.find((n)=>{
+//     return n>=2
+// })
+// console.log(first)
+
+// let firstIndex=arr.findIndex((n)=>{
+//     return n>=2
+// })
+// console.log(firstIndex)
+
+// let lastIndex=arr.findLastIndex((n)=>{
+//     return n>=2
+// })
+// console.log(lastIndex)
+
+//sort the array
+// const arr=[1,2,3,4,5,6,7,8,9]
+// arr.sort()
+// console.log(arr)
+// arr.sort((n1,n2)=>{
+//     return n2-n1
+// })
+// console.log(arr)
+
+//< will be descending and > will be ascending
+// for(let i=0;i<arr.length;i++){
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i]<arr[j]){
+//             let temp=arr[i]
+//             arr[i]=arr[j]
+//             arr[j]=temp
+//         }
+//     }
+// }
+// console.log(arr)
+
+//Find the maximum repeated words in a sentence
+
+// const para = "Bob hit a ball, the hit BALL flew far after it was hit."
+// const banned = "hit"
+
+// const array=para.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(" ")
+
+// console.log(array)
+
+// let wordCount={}
+
+// for(let word of array){
+//     if(word !==banned){
+//         if(wordCount[word]){
+//             wordCount[word]++
+//         }else{
+//             wordCount[word]=1
+//         }
+//     }
+// }
+// console.log(wordCount)
+
+// const entries=Object.entries(wordCount)
+// console.log(entries)
+// console.log(entries.length)
+// let maxCount=0
+// let maxWord=""
+
+// for(let i=0;i<entries.length;i++){
+//     if(entries[i][1]>maxCount){
+//         maxCount=entries[i][1]
+//         maxWord=entries[i][0]
+//     }
+// }
+// console.log(`maxCount is ${maxCount} and maxword is ${maxWord}`)
+
+// function add(a,b){
+//     return new Promise((resolve,reject)=>{
+//         if(a&&b != "undefined"){
+//             resolve(a+b)
+//         }else{
+//             reject("number needed")
+//         }
+//     })
+// }
+
+// function multiply(a,b){
+//     return new Promise((resolve,reject)=>{
+//         if(a&&b != "undefined"){
+//             resolve(a*b)
+//         }else{
+//             reject("number needed")
+//         }
+//     })
+// }
+
+// add(2,4)
+// .then((sum)=>{
+//     console.log(sum)
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })
+// multiply(2,2)
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((error)=>{
+//     console.log(error)
+// })
+
+// function add(a,b){
+//     return new Promise((resolve,reject)=>{
+//         if(a && b){
+//             resolve(a+b)
+//         }else{
+//             reject("no is not defined")
+//         }
+//     })
+// }
+
+// function multiply(a,b){
+//     return new Promise((resolve,reject)=>{
+//         if(a && b){
+//             resolve(a*b)
+//         }else{
+//             reject("no is needed")
+//         }
+//     })
+// }
+
+// function divide(a,b){
+//     return new Promise((resolve,reject)=>{
+//         if(a && b!=0){
+//             resolve(a/b)
+//         }else{
+//             reject("no is needed")
+//         }
+//     })
+// }
+
+// add(4,6)
+// .then((resolve)=>{
+//     console.log("add:",resolve)
+//     return multiply(resolve,2)
+// })
+// .then((resolve)=>{
+//     console.log("product:",resolve)
+//     return divide(resolve,2)
+// })
+// .then((resolve)=>{
+//     console.log("divide:",resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+//shadowing
+
+// function shadow(){
+//     let a=10
+//     var b=5
+//     if(true){
+//         let a=20
+//         var b=30
+//         console.log(a)
+//         console.log(b)
+//     }
+//     console.log(a)
+//     console.log(b)
+// }
+// shadow()
+
+//shallowCopy
+// const obj1={
+//     name:"ahamathbasha",
+//     desig:"senior software developer"
+// }
+// const obj2=obj1
+// obj2.name="Ahamathbasha"
+// console.log(obj1)
+// console.log(obj2)
+
+//slice
+// const array = ["Mango","Orange","Apple","Banana"]
+// console.log(array.slice(1,3))
+// console.log(array)
+//splice affect the original
+// console.log(array.splice(0,1,"Maaza"))//[ 'Mango' ]
+// console.log(array)//[ 'Maaza', 'Orange', 'Apple', 'Banana' ]
+//toSplice does not affect the original
+// console.log(array.toSpliced(0,1,"Rambootan"))
+// console.log(array)
