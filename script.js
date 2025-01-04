@@ -906,3 +906,802 @@ y(x)
 // }
 // console.log(str1)
 
+//call
+// function greet(){
+//     console.log(`hi ${this.name}`)
+//     console.log(`your age is ${this.age}`)
+// }
+// const object={name:"ahamathbasha",age:"22"}
+// greet.call(object)
+// const object2={name:"ahamath",age:"22"}
+// greet.call(object2)
+
+//apply
+// function motivation(message1,message2){
+//     console.log(`mr.${this.name}.your age is ${this.age}. ${message1} ${message2}`)
+// }
+// const person={name:"ahamath",age:25}
+// motivation.apply(person,["age is not a problem","to acheive"])
+
+//bind
+// function happy(){
+//     console.log(`good morning from ${this.name}`)
+// }
+// const object={name:"ahamathbasha"}
+// const greet=happy.bind(object)
+// greet()
+
+//Anagram
+
+// let word1="silent"
+// let word2="listen"
+
+// word1=word1.split("").sort().join("")
+// console.log(word1)
+// word2=word2.split("").sort().join("")
+// console.log(word2)
+// if(word1==word2){
+//     console.log("anagram")
+// }
+
+// const person={name:'abin',age:6,school:null}
+// const defaultValue="Error"
+// //const {name,age,school}=person
+// console.log(person.school??defaultValue)
+
+// const arr=["ahamathbasha","nangopan","muthudhasan","manikandaprabhu","madhankumar","sharik"]
+
+// const result=arr.map((elements)=>{
+//     return elements[0]
+// })
+// console.log(result)
+
+// const obj={
+//     firstName:"Ahamathbasha",
+//     lastName:"F"
+// }
+// const print=function display(desig){
+//     return `${this.firstName} ${this.lastName} ${desig}`
+// }
+
+//console.log(print.call(obj,"seniorSoftwareEngineer"))
+// const displayFunction=print.bind(obj)
+// console.log(displayFunction("buissnessMan"))
+
+// function myAge(){
+//     console.log(this.age)
+// }
+// let student={age:5}
+// myAge.call(student)
+
+// let obj={}
+// if(Object.keys(obj)==0){
+//     console.log("object is empty")
+// }else{
+//     console.log("object is not empty")
+// }
+
+//In object we dont have length property.It will show wrong answer if we use length property directly.
+
+//currying
+
+// function multiplication(a){
+//     return function (b){
+//         return a*b
+//     }
+// }
+
+// const multiplicationOfTwo=multiplication(2)
+// console.log(multiplicationOfTwo(5))
+
+// function maths(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
+
+// const result=maths(1)(2)(3)
+// console.log(result)
+
+//find the duplicate
+
+// const arr=[1,2,3,4,4,5,5,4,5,6,7,8]
+// const duplicateArr=[]
+
+// for(let i=0;i<arr.length;i++){
+//     let flag=0
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i]==arr[j]){
+//             flag++
+//         }
+//     }
+//     if(flag>1){
+//         duplicateArr.push(arr[i])
+//     }
+// }
+// console.log(duplicateArr)
+
+// let uniqueArr=[]
+// for(let i=0;i<arr.length;i++){
+//     let flag=0
+//     for(let j=0;j<arr.length;j++){
+//         if(arr[i]==arr[j]){
+//             flag++
+//         }
+//     }
+//     if(flag==1){
+//         uniqueArr.push(arr[i])
+//     }
+// }
+// console.log(uniqueArr)
+
+// function* gen(){
+//     yield 1
+//     yield "hi"
+//     yield 54
+// }
+
+// const generator=gen()
+// for(let i=1;i<=3;i++){
+// console.log(generator.next().value)
+// }
+
+//Object questions
+// let abc = [{a:[{bc: 9}]} ,{b:[{dc: 89}]} ,{x:[{sc: 39}]} , {s:[{xc: 82}]}  ]
+
+// let sum = 0
+// for(let i of abc) {
+//     let index = Object.values(i)[0][0];
+//     sum += Object.values(index)[0]
+// }
+
+// console.log(sum)
+
+//find the largest length of the array
+
+// const str = 'India is my country my'
+// let arr=str.split(" ")
+
+// let largestlength=arr[0]
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i].length > largestlength.length){
+//         largestlength=arr[i]
+//     }
+// }
+// console.log(largestlength)
+
+//find the object who scored high marks
+// const details=[
+//     {name:"Vignesh",class:"12th",score:90,status:"PASS"},
+//     {name:"Abin",class:"12th",score:91,status:"PASS"},
+//     {name:"Logesh",class:"12th",score:96,status:"PASS"},
+//     {name:"Harish",class:"12th",score:73,status:"PASS"},
+// ]
+// let max=details[0]
+// for(let i=1;i<details.length;i++){
+//     if(details[i].score>max.score){
+//         max=details[i]
+//     }
+// }
+// console.log(max)
+
+
+// function oddOrEven(num){
+//     return new Promise((resolve,reject)=>{  
+//         if(typeof num=='number' && num%2==0){
+//             resolve("it is even")
+//         }else{
+//             reject("it is odd")
+//         }
+//     })
+// }
+// oddOrEven(6)
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+// function Person(name,age,place){
+//     this.name=name
+//     this.age=age
+//     this.place=place
+// }
+
+// Person.prototype.Nationality="indian"
+
+// const Abin=new Person("Ahamathbasha",22,"tvm")
+// console.log(Abin.Nationality)
+
+// function asynchronous_operational_method(){
+//     let firstPromise=new Promise((resolve,reject)=>{
+//         resolve("hello")
+//     })
+//     let secondPromise=new Promise((resolve,reject)=>{
+//         resolve("basha")
+//     })
+//     let allsettled=Promise.allSettled([firstPromise,secondPromise])
+//     return allsettled
+// }
+
+// async function display(){
+//     const data=await asynchronous_operational_method()
+//     console.log(data)
+// }
+
+// display()
+
+// const factorial=function fact(n){
+//     if(n==0||n==1){
+//         return 1
+//     }
+//     return n*fact(n-1)
+// }
+// console.log(factorial(5))
+
+// const arr = [1,2,3,4,5,55,6]
+
+// const highest=arr.reduce((acc,cur)=>{
+//     if(cur>acc){
+//         acc=cur
+//     }
+//     return acc
+// })
+// console.log(highest)
+
+// const arr=[1,2,3,4,5,6,7]
+// const set=new Set(arr)
+// set.add(8)
+// console.log(set)
+// console.log(set.size)
+// console.log(set.delete(8))
+// console.log(set.has(1))
+
+// const num = ["apple","banana","orange"]
+// const arr=num.toSpliced(0,2,"Kiwi","java")
+// console.log(arr)
+
+// const Person={
+//     name:"ahamathbasha",
+//     age:22,
+//     greet:function(msg){
+//         console.log(`my name is ${this.name} and age is ${this.age}.Message is ${msg}`)
+//     }
+// }
+
+// const person1={
+//     name:"Ahamathbasha",
+//     age:21
+// }
+
+// const message=Person.greet.bind(person1)
+// message("hello")
+// Person.greet.call(person1,"good morning")
+// Person.greet.apply(person1,["good morning"])
+
+//deep freeze
+
+// const person={
+//     name:"ahamathbasha",
+//     age:25,
+//     address:{
+//         city:"chennai",
+//         pincode:606901
+//     }
+// }
+
+// function deepfreeze(obj){
+//     let propNames=Object.getOwnPropertyNames(obj)
+//     for(let name of propNames){
+//         let value=obj[name]
+//         if(value && typeof value == "object"){
+//             deepfreeze(obj)
+//         }
+//     }
+//     return Object.freeze(obj)
+// }
+
+// deepfreeze(person)
+
+// person.address.city="tvm"
+// console.log(person)
+
+//factory function
+
+// function createPerson(name,age){
+//     return{
+//         name:name,
+//         age:age,
+//         greet:function(){
+//             console.log(`my name is ${this.name} and age is ${this.age}`)
+//         }
+//     }
+// }
+
+// const person1=createPerson('abin',22)
+// console.log(person1)
+
+// for(var i=1;i<=10;i++){
+//     setTimeout(()=>{
+//         console.log("inner")
+//     },5000)
+//     console.log("outer")
+// }
+//outer will be print ten times
+//inner will print ten times
+
+// const str="madam"
+// const newStr=str.split("").reverse().join("")
+// console.log(newStr)
+// if(str==newStr){
+//     console.log("true")
+// }else{
+//     console.log("false")
+// }
+
+// const arr = [1, 3, 4, 2, 6, 9, 8, 5];
+
+// let firstLargest = 0;
+// let secondLargest = 0;
+// let thirdLargest = 0;  // Initialize thirdLargest with 0
+
+// // Find the first largest element
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > firstLargest) {
+//         firstLargest = arr[i];
+//     }
+// }
+// console.log("First Largest:", firstLargest);
+
+// // Find the second largest element
+// for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > secondLargest && arr[i] !== firstLargest) {
+//         secondLargest = arr[i];
+//     }
+// }
+// console.log("Second Largest:", secondLargest);
+
+// // Find the third largest element
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i] > thirdLargest && arr[i] != firstLargest && arr[i] != secondLargest){
+//         thirdLargest=arr[i]
+//     }
+// }
+// console.log("Third Largest:",thirdLargest)
+
+//finding first and second largest
+// const Person = [{name: "Abin", age: 22, score: 78},
+//     {name:"Logesh", age: 21, score: 79},
+//     {name: "Vignesh", age: 22, score: 80},
+//     {name:"basha", age: 23, score: 100},
+//     {name: "Harish", age: 22, score: 82}]
+    
+// let max = Person[0]
+// for(let i=0;i<Person.length;i++){
+//     if(Person[i].score > max.score){
+//         max=Person[i]
+//     }
+// }
+// console.log(max)
+// let secondMax=Person[0]
+// for(let i=0;i<Person.length;i++){
+//     if(Person[i].score > secondMax.score && Person[i].score != max.score){
+//         secondMax=Person[i]
+//     }
+// }
+// console.log(secondMax)
+
+//sum the given arr condition is greater than 30
+
+// const ar = [10,20,30,40,50]
+// let sum=ar.reduce((acc,cur)=>{
+//     if(cur>30){
+//       return  acc+cur
+//     }else{
+//         return acc
+//     }
+// },0)
+// console.log(sum)
+
+//find the sum of the array of object
+
+// let sum=0
+// const array = [{abc:3, efg:4}, {abc: 3, efg:4}, {abc: 3, efg: 4}, {abc:3,efg:4}]
+// for(let i=0;i<array.length;i++){
+//     sum=sum+array[i].abc+array[i].efg
+// }
+// console.log(sum)
+
+// let y = 4;
+// function num(){
+//     y = 8;
+//     console.log("The no: inside the func: " + y)
+// }
+
+// num()
+// console.log(y)
+
+//constructor
+
+// function Person(name,age,place){
+//     this.name=name,
+//     this.age=age,
+//     this.place=place
+// }
+
+// const ahamath=new Person("Ahamathbasha",20,"tvm")
+// console.log(ahamath)
+
+// const array = [10 ,20 , 30 , 40, 50]
+
+// array.splice(2,0,25)
+
+// console.log(array)
+
+// const output = array.reduce((acc, curr)=>{
+//     if(curr>30){
+//         return curr+acc
+//     }else{
+//         return acc
+//     }
+// },0)
+
+// console.log(output)
+// let max = 0
+// const hi = array.reduce((acc,curr)=>{
+//     if(curr>max){
+//         return curr
+//     }else {
+//         return max
+//     }
+// },0)
+
+// console.log(hi)
+
+
+// let big = array.reduce((acc, curr)=>{
+//     return acc+curr
+// },0)
+
+// console.log(big)
+
+// let fil = array.filter((x)=>{
+//     if(x%2==0){
+//         return x
+//     }
+// })
+
+// console.log(fil)
+
+// let map = array.map((x)=>{
+// return x*x
+// })
+
+// console.log(map)
+
+//every method
+
+// const array=[2,7,8,5]
+// const out=array.every((n)=>n%2==0)
+// console.log(out)
+
+//factory function 
+// function createPerson(name,age){
+//     return {
+//         name:name,
+//         age:age,
+//         greet:function(){
+//             console.log(`name is ${this.name} and age is ${this.age}`)
+//         }
+//     }
+// }
+// const person=createPerson("ahamathbasha",20)
+// console.log(person)
+
+//flat
+
+// const arr=[1,2,3,[4,5,[6,7,8]]]
+// console.log(arr.flat(2))
+
+//flatMap
+
+// const array=[1,2,3]
+// const flatMap=array.flatMap((x)=>{
+//     return [x,x*2]
+// })
+// console.log(flatMap)
+
+//generator
+
+// function* gen(){
+//     let m=2
+//     while(true){
+//         yield m
+//         m+=2
+//     }
+    
+// }
+
+// const twoTable=gen()
+// for(let i=1;i<=10;i++){
+//     console.log(twoTable.next().value)
+// }
+
+//map
+
+// const array=[1,3,4,5,6,7,8]
+// const output=array.map((n)=>{
+//     return n*4
+// })
+// console.log(output)
+
+//nullish
+
+// const value=null
+// console.log(value ?? "hi")
+
+//optional chaining
+
+// const person={
+//     name:"Abin",
+//     age:22,
+//     address:{
+//         city:"kochi"
+//     }
+// }
+
+// console.log(person.address?.pincode?.code?.no)
+// // console.log(person.address.pincode.code).It show error
+
+// const Person = {
+//     id:1,
+//     name: "Abin",
+//     address: {
+//         street: "Abc",
+//         city: null
+//     }
+// }
+// console.log(Person.address?.city)//if the value is mentioned it will give otherwise undefined
+
+//remove vowels
+
+// function vowels(str){
+//     return str.replace(/[aeiou]/gi,'')
+// }
+// console.log(vowels("ahamath"))
+
+// const array=[2,3,5,5]
+// const array1=new Set(array)
+// console.log(array1)
+
+//Take the first character of each string and store it in the array
+// const string=["apple", "banana", "orange", "grape", "kiwi"];
+
+// const firstLetter=string.map((s)=>{
+//     return s[0]
+// })
+// console.log(firstLetter)
+
+// let str = "lucky"
+
+// for(let i=str.length-1;i>=0;i--){
+//     console.log(str[i])
+// }
+
+// let words = ["alice","bob","charlie"], s = "abc"
+// let firstLetter=""
+// for(let i=0;i<words.length;i++){
+//     firstLetter=firstLetter+words[i][0]
+// }
+// console.log(firstLetter===s)
+
+// let n=11
+// console.log(n.toString(2))
+
+//closure
+
+// function n(){
+//     let x=10
+//     function inner(){
+//         console.log(x)
+//     }
+//     return inner()
+// }
+// n()
+
+//default function
+
+// function name(name="Ahamathbasha"){
+//     console.log(name)
+// }
+// name()
+
+// function fact(n){
+//     if(n==0||n==1){
+//         return 1
+//     }
+//     return n*fact(n-1)
+// }
+// console.log(fact(5))
+
+// const array = ["apple", "mango", "orange"]
+// for(let n of array){
+//     console.log(n)
+// }
+
+// const object = {name: "Abin", age: 22}
+// for(let i in object){
+//     console.log(i)
+// }
+
+// for(let i in object){
+//     console.log(object[i])
+// }
+
+// const Animal={
+//     sound:function(){
+//         return `${this.name} makes sound`
+//     }
+// }
+
+// const dog=Object.create(Animal)
+// dog.name="dog"
+// console.log(dog)
+// console.log(dog.sound())
+
+// let n="abin"
+// console.log(n.search("n"))
+
+// let pattern=/best/
+// let string="I am the best"
+// console.log(pattern.test(string))
+
+//remove vowels
+
+// let str = "Hi HEllo How ARE yoU"
+// str=str.replaceAll(/[aeiou]/gi,"")
+// console.log(str)
+
+//store the repeated odd no in a set
+
+// const array = [1,2,2,3,4,5,6,7,7,3]
+// const set=new Set()
+
+// for(let i=0;i<array.length;i++){
+//     let flag=0
+//     for(let j=0;j<array.length;j++){
+//         if(array[i]==array[j]){
+//             flag++
+//         }
+//     }
+//     if(flag>1){
+//         if(array[i]%2!=0){
+//             set.add(array[i])
+//         }
+//     }
+// }
+// console.log(set)
+
+// let array=["apple","orange","banana"]
+// let set=new Set(array)
+// set.forEach((element)=>{
+//     console.log(element)
+// })
+// console.log(...array)
+// console.log(...set,...array)
+// console.log(...set)
+
+// const arr = ["Amal", "Arun", "Kiran", "manoharan", "Anandhu", "Manu", "Sachin", "Sivasankaran", "Amarnadh"];
+
+// arr.sort()
+// console.log(arr)
+
+// const arr=[1,2,2,3,4]
+// arr.length=0
+// console.log(arr)
+
+// let output="abinbabu"
+// let out1=output.substring(0,4)
+// let out2=output.substring(4,0)
+// let out3=output.substr(0,4)
+// let out4=output.substr(4,0)//it does not support for the reverse
+// console.log(out1)
+// console.log(out2)
+// console.log(out3)
+// console.log(out4)
+
+//unique elements
+// const array = [2,4,5,39,2,4,10]
+// let unique=[]
+// for(let i=0;i<array.length;i++){
+//     let flag=0
+//     for(let j=0;j<array.length;j++){
+//         if(array[i]==array[j]){
+//             flag++
+//         }
+//     }
+//     if(flag==1){
+//         unique.push(array[i])
+//     }
+// }
+// console.log(unique)
+
+//objectarr find the sum 
+// const abc = [{df:5,adf:4},{ddf:5,adf:4},{ddf:5,adfd:4}]
+// let arr=[]
+// for(let i=0;i<abc.length;i++){
+//     arr.push(Object.values(abc[i]))
+// }
+// console.log(arr)
+// console.log(arr[0][0])
+// let sum=0
+// for(let i=0;i<arr.length;i++){
+//     for(let j=0;j<arr[i].length;j++){
+//         sum=sum+arr[i][j]
+//     }
+// }
+// console.log(sum)
+
+//find the sum of the array of object
+// let arr = [{ab: 1, cd: 2}, {ab: 3, cd: 4}, {ab: 5, cd: 6}]
+
+// let sum=0
+// for(let i=0;i<arr.length;i++){
+//     sum=sum+arr[i].ab+arr[i].cd
+// }
+// console.log(sum)
+
+// const person = {
+//     name:"Abin",
+//     location: {
+//         city: "Chennai"
+//     }
+// }
+
+//shallow copy by 
+
+// const person1=Object.assign(person,{first:1,second:2})
+// console.log(person)
+// console.log(person1)
+
+// const abc = [{af:[3,4,4]},{adf:[3,4,4]},{afd:[3,4,4]},{daldf:[3,4,4]}]
+
+// let arr=[]
+// for(let i=0;i<abc.length;i++){
+//     arr.push(Object.values(abc[i]))
+// }
+// arr=arr.flat(2)
+// console.log(arr)
+// let sum=0
+// for(let i=0;i<arr.length;i++){
+//     sum+=arr[i]
+// }
+// console.log(sum)
+
+let names = ["Mary","John","Emma"], heights = [180,165,170]
+
+var sortPeople = function(names, heights) {
+    let arr = []
+    for(let i = 0 ; i< names.length; i++){
+        arr.push({name: names[i], height: heights[i]})
+    }
+
+    arr.sort((a,b)=>{
+        return b.height - a.height
+    })
+
+    console.log(arr)
+
+    let ans = arr.map((x)=>
+    {
+        return x.name
+    })
+
+    return ans
+    
+};
+
+console.log(sortPeople(names,heights));
