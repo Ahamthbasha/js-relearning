@@ -1681,27 +1681,76 @@ y(x)
 // }
 // console.log(sum)
 
-let names = ["Mary","John","Emma"], heights = [180,165,170]
+// let names = ["Mary","John","Emma"], heights = [180,165,170]
 
-var sortPeople = function(names, heights) {
-    let arr = []
-    for(let i = 0 ; i< names.length; i++){
-        arr.push({name: names[i], height: heights[i]})
-    }
+// var sortPeople = function(names, heights) {
+//     let arr = []
+//     for(let i = 0 ; i< names.length; i++){
+//         arr.push({name: names[i], height: heights[i]})
+//     }
 
-    arr.sort((a,b)=>{
-        return b.height - a.height
-    })
+//     arr.sort((a,b)=>{
+//         return b.height - a.height
+//     })
 
-    console.log(arr)
+//     console.log(arr)
 
-    let ans = arr.map((x)=>
-    {
-        return x.name
-    })
+//     let ans = arr.map((x)=>
+//     {
+//         return x.name
+//     })
 
-    return ans
+//     return ans
     
-};
+// };
 
-console.log(sortPeople(names,heights));
+// console.log(sortPeople(names,heights));
+
+//sort it in height based
+// let names = ["Mary","John","Emma"], heights = [180,165,170]
+// let arr=[]
+// for(let i=0;i<names.length;i++){
+//     arr.push({name:names[i],height:heights[i]})
+// }
+// for(let i=0;i<arr.length;i++){
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i].height>arr[j].height){
+//             let temp=arr[i]
+//             arr[i]=arr[j]
+//             arr[j]=temp
+//         }
+//     }
+// }
+// console.log(arr)
+
+//memoization
+
+// let calculation=(n)=>{
+//     let sum=0
+//     for(let i=1;i<=n;i++){
+//         sum=sum+i
+//     }
+//     return sum
+// }
+
+// let memoization=(fun)=>{
+//     let cache={}
+//     return function(...args){
+//         let n=args[0]
+//         if(n in cache){
+//             return cache[n]
+//         }else{
+//             let result=fun(...args)
+//             cache[n]=result
+//             return result
+//         }
+//     }
+// }
+
+// const efficient=memoization(calculation)
+// console.time()
+// console.log(efficient(5))
+// console.timeEnd()
+// console.time()
+// console.log(efficient(5))
+// console.timeEnd()
