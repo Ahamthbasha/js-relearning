@@ -830,3 +830,79 @@ y(x)
 //toSplice does not affect the original
 // console.log(array.toSpliced(0,1,"Rambootan"))
 // console.log(array)
+
+// 
+
+// function name(){
+//     console.log("ahamathbasha")
+// }
+
+// const time=setInterval(()=>{
+//     name()
+// },1000)
+
+// setTimeout(()=>{
+//     console.log("i am going to stop you")
+//     clearInterval(time)
+// },3000)
+
+//generator
+
+// function* gen(n){
+//     let m=1
+//     while(true){
+//         yield m*n
+//         m++
+//     }
+// }
+
+// const three=gen(3)
+// for(let i=1;i<=10;i++){
+//     console.log(three.next().value)
+// }
+
+//deepcopy
+// const obj1={a:1,b:2,c:{d:5}}
+// const obj2=JSON.parse(JSON.stringify(obj1))
+// obj2.c.d=20
+// console.log(obj2)
+// console.log(obj1)
+
+//set
+// let object1={name:"ahamath"}
+// let object2={name:"basha"}
+
+// let mySet=new Set(Object.entries(object1))
+// console.log(mySet)
+// let weakSet=new WeakSet()
+// weakSet.add(object1)
+// console.log(weakSet)
+
+//find the vowels in the given string and add in the new array
+
+// let s="hello"
+// let vowels=['a','e','i','o','u','A','E','I','O','U']
+// let vow=[]
+// for(let i=0;i<s.length;i++){
+//     if(vowels.includes(s[i])){
+//         vow.push(s[i])
+//     }
+// }
+// console.log(vow)
+
+// //in the vowels array reverse and modify e to o and o to e.
+
+// let rev=vow.reverse()
+// console.log(rev)
+// let str1=""
+// let k=0
+// for(let i=0;i<s.length;i++){
+//     if(vowels.includes(s[i])){
+//         str1=str1+rev[k]
+//         k++
+//     }else{
+//         str1=str1+s[i]
+//     }
+// }
+// console.log(str1)
+
