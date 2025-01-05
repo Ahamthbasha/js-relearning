@@ -2187,3 +2187,237 @@ let text='My name is Sathish'
 // }
 
 // console.log(findPrimeAndSum(arr))
+
+//reverse a string
+
+// function reverse(str){
+//     return str.split(" ").reverse().join(" ")
+    
+// }
+// console.log(reverse('My name is Sathish'))
+
+//palindrome or not
+
+// function isPalindrome(str){
+//     let input=str.toLowerCase()
+//     let reverse=input.split(" ").reverse().join(" ")
+//     if(input===reverse){
+//         return "string is palindrome"
+//     }else{
+//         return "string is not palindrome"
+//     }
+// }
+
+// console.log(isPalindrome("Malayalam"))
+
+//check the given word is anagram or not
+
+// function checkAnagram(str1,str2){
+//     let word1=str1.split("").sort().join("")
+//     let word2=str2.split("").sort().join("")
+//     if(word1==word2){
+//         return 'anagram'
+//     }else{
+//         return 'not anagram'
+//     }
+// }
+// console.log(checkAnagram("listen","silent"))
+
+//find the largest word in the given string
+
+// let string="My name is sathish"
+// function findLargestString(string){
+// let str=string.split(" ")
+// console.log(str)
+// let largest=str[0]
+// for(let i=0;i<str.length;i++){
+//     if(str[i].length>largest.length){
+//         largest=str[i]
+//     }
+// }
+// return largest
+// }
+// console.log(findLargestString(string))
+
+//count number of words in a string
+
+// function countWords(str){
+//     let n=str.split(" ").length
+//     return n
+// }
+// console.log(countWords("My name is Ahamathbasha"))
+
+//Remove vowels in a string
+
+// function removeVowels(str){
+//     return str.replaceAll(/[aeiou]/gi,'')
+// }
+// console.log(removeVowels("augmentation"))
+
+//check vowel is in the string
+
+// function checkVowels(str){
+//     if(/[aeiou]/gi.test(str)){
+//         return "it has vowels"
+//     }
+//     return "it does not has vowels"
+// }
+// console.log(checkVowels("augmentation"))
+
+//count no of vowels in the given string
+
+// function countVowelsInString(str){
+//     let count=0
+//     for(let i=0;i<str.length;i++){
+//         if("aeiouAEIOU".includes(str[i])){
+//             count++
+//         }
+//     }
+//     return count
+// }
+// console.log(countVowelsInString("Augmentation"))
+
+//count occurence of the specific character
+
+// function countSpecificCharacter(str,char){
+//     let count=0
+//     for(let i=0;i<str.length;i++){
+//         if(str[i].toLowerCase()===char.toLowerCase()){
+//             count++
+//         }
+//     }
+//     return count
+// }
+
+// console.log(countSpecificCharacter('Journey to the center of the earth','e'))
+
+//removeDuplicates
+
+//Helloloooo
+
+// function removeDuplicates(str){
+//     let string=""
+//     for(let i=0;i<str.length;i++){
+//         for(let j=0;j<str.length;j++){
+//             if(str[i]==str[j] && !string.includes(str[i])){
+//                 string+=str[i]
+//             }
+//         }
+//     }
+//     str=string
+//     return str
+// }
+// console.log(removeDuplicates("Helloloooo"))
+
+//find the substring of the given string
+
+// function searchSubstr(str,substr){
+//     let index=str.indexOf(substr)
+//     if(index>0){
+//         return index 
+//     }
+//     return "It is not found"
+// }
+
+// console.log(searchSubstr("My name is sathish","i"))
+
+//capitalize first letter of each word
+
+// function capitalizeFirstLetter(str){
+//     let words=str.split(" ")
+//     let firstLetter=words.map((map)=>{
+//         return map[0].toUpperCase()+map.slice(1)
+//     })
+//     return firstLetter
+// }
+// console.log(capitalizeFirstLetter('my name is ahamathbasha'))
+
+//character frequency
+
+// const str="hello world"
+// function countFrequencies(str){
+// let charCount={}
+// for(let i=0;i<str.length;i++){
+//     let char=str[i]
+//     if(charCount[char]){
+//         charCount[char]++
+//     }else{
+//         charCount[char]=1
+//     }
+// }
+// return charCount
+// }
+
+// console.log(countFrequencies(str))
+
+//find the non repeating characters
+
+// const str="hellol"
+
+// function unique(str){
+//     let unique=[]
+//     for(let i=0;i<str.length;i++){
+//         let flag=0
+//         for(let j=0;j<str.length;j++){
+//             if(str[i]==str[j]){
+//                 flag++
+//             }
+//         }
+//         if(flag==1){
+//             unique.push(str[i])
+//         }
+//     }
+//     return unique.join("")
+// }
+
+// console.log(unique(str))
+
+//object
+
+
+const nestedArray = [
+    { "ab": 2 },
+    [
+        { "bf": 3 }
+    ],
+    { "df": 5 },
+    [
+        { "gh": 1 },
+        [
+            { "ij": 4 }
+        ]
+    ]
+];
+// let values=[]
+// for(let i=0;i<nestedArray.length;i++){
+//     if(Array.isArray(nestedArray[i])){
+//         for(let j=0;j<nestedArray[i].length;j++){
+//             if(typeof nestedArray[i][j]==="object"){
+//                 values.push(...Object.values(nestedArray[i][j]))
+//             }
+//             else if(typeof nestedArray[i][j]=="number"){
+//                 values.push(nestedArray[i][j])
+//             }
+//         }
+//     }
+//     else if(typeof nestedArray[i]==='object'){
+//         values.push(...Object.values(nestedArray[i]))
+//     }
+//     else if(typeof nestedArray[i]==='number'){
+//         values.push(nestedArray[i])
+//     }
+// }
+// console.log(values)
+// let n
+
+// for(let i=0;i<values.length;i++){
+//     if(typeof values[i]==="object"){
+//          n=Object.values(values[i])
+//     }
+// }
+// values.pop()
+// values.push(...n)
+// console.log(values)
+
+// let sum=values.reduce((acc,cur)=>acc+cur)
+// console.log(sum)
