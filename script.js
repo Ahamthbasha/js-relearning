@@ -2032,6 +2032,158 @@ let text='My name is Sathish'
 // const arr=Array.from(output)
 // console.log(arr)
 
-console.log(text.includes('My'))
-console.log(text.startsWith('M'))
-console.log(text.endsWith('s'))
+// console.log(text.includes('My'))
+// console.log(text.startsWith('M'))
+// console.log(text.endsWith('s'))
+
+//reverse an array
+
+// let arr=[5,4,3,2,1]
+// let start=0
+// let end=arr.length-1
+// while(start<end){
+//     let temp=arr[start]
+//     arr[start]=arr[end]
+//     arr[end]=temp
+//     start++
+//     end--
+// }
+// console.log(arr)
+
+//let num=[1,2,3,4,5]
+//find the largest element from the array
+// function findLargestNo(arr){
+// let largest=0 
+// for(let i=0;i<arr.length;i++){
+//     if(arr[i]>largest){
+//         largest=arr[i]
+//     }
+// }
+// return largest
+// }
+// console.log(findLargestNo(num))
+
+//sum of the array
+// function sum(arr){
+//     let sum=0
+//     for(let i=0;i<arr.length;i++){
+//         sum=sum+arr[i]
+//     }
+//     return sum
+// }
+
+// console.log(sum(num))
+
+//delete the element from the given array
+
+// function deleteNO(arr,no){
+//     let index=arr.indexOf(no)
+//     arr.splice(index,1)
+//     return arr
+// }
+// console.log(deleteNO([1,2,3,4,5],2))
+
+//find the array has duplicates elements or not
+
+// function dupllicateOrNot(arr){
+//     for(let i=0;i<arr.length;i++){
+//         for(let j=i+1;j<arr.length;j++){
+//             if(arr[i]==arr[j]){
+//                 return "array has duplicate element"
+//             }
+//         }
+//     }
+//     return "array does not have duplicate element"
+// }
+
+// console.log(dupllicateOrNot([1,2,3,4,5,1]))
+
+//find and store the duplicate elements in an array
+
+// function storeDuplicate(arr){
+//     let duplicate=[]
+//     for(let i=0;i<arr.length;i++){
+//         for(let j=i+1;j<arr.length;j++){
+//             if(arr[i]==arr[j] && !duplicate.includes(arr[i])){
+//                 duplicate.push(arr[i])
+//             }
+//         }
+//     }
+//     return duplicate
+// }
+// console.log(storeDuplicate([1,2,2,3,2,1,1,5,5,6,6,6]))
+
+//remove the duplicates elements from the given array
+
+// function removeDuplicate(arr){
+//     let newArr=[]
+//     for(let i=0;i<arr.length;i++){
+//         if(!newArr.includes(arr[i])){
+//             newArr.push(arr[i])
+//         }
+//     }
+//     return newArr
+// }
+// console.log(removeDuplicate([1,2,2,3,2,1,1,5,5,6,6,6]))
+
+//concat arrays using spread operator
+
+// function concat(arr1,arr2){
+//     let output=[...arr1,...arr2]
+//     return output
+// }
+
+// console.log(concat([1,2,3,4,5],[1,2,3,4,5]))
+
+//loop a string array and print their length
+
+// function printLength(arr){
+//     for(let n of arr){
+//         console.log(`${n} length is ${n.length}`)
+//     }
+// }
+// printLength(['sathish','kumar','baskaran'])
+
+//find the unique elements in the given array
+
+// function uniqueElements(arr){
+//     let unique=[]
+//     for(let i=0;i<arr.length;i++){
+//         let flag=0
+//         for(let j=0;j<arr.length;j++){
+//             if(arr[i]==arr[j]){
+//                 flag++
+//             }
+//         }
+//         if(flag==1){
+//             unique.push(arr[i])
+//         }
+//     }
+//     return unique
+// }
+
+// console.log(uniqueElements([1,2,3,4,1,2,4,99]))
+
+//find the prime no in the array and sum the prime no
+
+// const arr = [1, 2, 3, 4,5,6,7,8,9,10];
+
+// function findPrimeAndSum(arr){
+//     let flag=0
+//     let primeSum=0
+//     for(let i=0;i<arr.length;i++){
+//         let n=arr[i]
+//         for(let i=1;i<=n;i++){
+//             if(n%i==0){
+//                 flag++
+//             }
+//         }
+//         if(flag==2){
+//             primeSum+=n
+//         }
+//         flag=0
+//     }
+//     return primeSum
+// }
+
+// console.log(findPrimeAndSum(arr))
