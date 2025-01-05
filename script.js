@@ -1754,3 +1754,284 @@ y(x)
 // console.time()
 // console.log(efficient(5))
 // console.timeEnd()
+
+
+//recursion
+
+// function countDown(n){
+//     if(n<=0){
+//         console.log("done")
+//         return
+//     }
+//     console.log(n)
+//     countDown(n-1)
+// }
+// countDown(5)
+
+//promise add
+
+// function add(a,b){
+//     return new Promise((resolve,reject)=>{
+//         if(typeof a =='number' && typeof b=='number'){
+//             resolve(a+b)
+//         }else{
+//             reject("numbers datatype only allowed")
+//         }
+//     })
+// }
+
+// add(5,4)
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+//promise race
+
+// let promise1=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("promise1")
+//     },3000)
+// })
+
+// let promise2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         reject("promise2")
+//     },1000)
+// })
+
+// let promise3=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("promise3")
+//     },2000)
+// })
+
+// Promise.race([promise1,promise2,promise3])
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+//async await function
+
+// function add(a,b){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+//             if(typeof a=='number' && typeof b=='number'){
+//                 resolve(a+b)
+//             }else{
+//                 reject("number only allowed")
+//             }
+//         },1000)
+//     })
+// }
+
+// async function addTwoNumber(a,b){
+//     try{
+//         let result=await add(a,b)
+//         console.log(result)
+//     }catch(error){
+//         console.log(error)
+//     }
+// }
+
+// addTwoNumber(4,5)
+
+// (()=>{
+//     console.log("iife")
+// })()
+
+// (function add(a,b){
+//     let sum=a+b
+//     console.log(sum)
+// })(5,4)
+
+
+//counter
+
+// const counter=(()=>{
+//     let count=0
+//     return{
+//         increment:(()=>{
+//             count++
+//             return count
+//         }),
+//         decrement:(()=>{
+//             count--
+//             return count
+//         }),
+//         getCount:(()=>{
+//             return count
+//         })
+//     }
+// })()
+// console.log(counter.increment())
+// console.log(counter.increment())
+// console.log(counter.increment())
+// console.log(counter.decrement())
+// console.log(counter.getCount())
+
+//constructor
+// class person{
+//     constructor(name,age,desig){
+//         this.name=name
+//         this.age=age
+//         this.desig=desig
+//     }
+//     getDetails(){
+//         console.log(`the name is ${this.name} and the age is ${this.age} and the designation is ${this.desig}`)
+//     }
+// }
+// const basha=new person("ahamathbasha",22,"senior software engineer")
+// basha.getDetails()
+
+//currying
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
+// const addition=add(1)(2)(3)
+// console.log(addition)
+
+//generator
+// function* gen(){
+//     let n=4
+//     while(true){
+//         yield n
+//         n+=4
+//     }
+// }
+// const multiplyFour=gen()
+// for(let i=1;i<=10;i++){
+//     console.log(multiplyFour.next().value)
+// }
+
+//optional chaining
+// const person = {
+//     name:'sathish',
+//     age:12,
+//     address:{
+//         city:'thanjavur'
+//     }
+// }
+
+// console.log(person.address?.pincode?.code)
+
+//object
+// const person={name:'ahamathbasha',age:29,school:'ksms',get Details(){return 'Iam '+this.name}}
+//console.log(person.Details)
+
+// const person2=person
+// person2.name="Ahamathbasha"
+// console.log(person)
+// console.log(person2)
+
+// person.details=function detials(){
+//     return `${this.name} and ${this.age}`
+// }
+
+// console.log(person)
+
+// const stringify=JSON.stringify(person)
+// console.log(stringify)
+
+//object getter and setter
+
+// const obj={count:0}
+
+// Object.defineProperty(obj,'increment',{
+//     get:function(){
+//         this.count++
+//         return this.count
+//     }
+// })
+
+// Object.defineProperty(obj,'decrement',{
+//     get:function(){
+//         this.count--
+//         return this.count
+//     }
+// })
+// Object.defineProperty(obj,'Add',{
+//     set:function(value){
+//         this.count+=value
+//         return this.count
+//     }
+// })
+// Object.defineProperty(obj,'Sub',{
+//     set:function(value){
+//         this.count-=value
+//         return this.count
+//     }
+// })
+
+// console.log(obj.increment)
+// console.log(obj.increment)
+// obj.Add=4
+// console.log(obj.count)
+
+//prototype
+// function Person(fname,lname,age){
+//     this.firstname=fname
+//     this.lastname=lname
+//     this.age=age
+// }
+
+// const basha=new Person("ahamathbasha","F",21)
+
+// Person.prototype.Nationality="indian"
+// console.log(basha)
+// console.log(basha.Nationality)
+
+// Person.prototype.greet=function(){
+//     return `good morning sir`
+// }
+// console.log(basha.greet())
+
+let text='My name is Sathish'
+// console.log(text.length)
+
+// console.log(text.charAt(3))
+// console.log(text.charCodeAt(3))
+// console.log(text[3])
+// console.log(text.at(3))
+
+// console.log(text.slice(0,3))
+// console.log(text.slice(0))
+// console.log(text.slice(-1))
+// console.log(text.slice(-5))
+// console.log(text.slice(-5,-2))
+
+// console.log(text.substring(-5,-1))//it wont allow negative
+// console.log(text.substring(0,5))
+// console.log(text.substr(-5,5))//It allow negative also.
+
+// console.log(text.repeat(3))
+
+// console.log(text.replace('h',''))
+// console.log(text.replaceAll('h',''))
+
+// console.log(text.lastIndexOf('h'))
+
+// console.log(text.search(/name/gi))
+
+// console.log(text.match(/is/))
+// console.log(text.match(/is/gi))
+// console.log(text.match('s'))
+
+// const output=text.matchAll('s')
+// console.log(output)//it gives the iterator.We need to modify that for further operations
+
+// const arr=Array.from(output)
+// console.log(arr)
+
+console.log(text.includes('My'))
+console.log(text.startsWith('M'))
+console.log(text.endsWith('s'))
