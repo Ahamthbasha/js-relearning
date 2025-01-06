@@ -2739,3 +2739,186 @@ let text='My name is Sathish'
 //     }
 // }
 // console.log(grouped)
+
+//write a function to check the given is in ascending order
+
+// function ascending(arr){
+//     for(let i=0;i<arr.length-1;i++){
+//         if(arr[i]>arr[i+1]){
+//            return console.error("false");
+//         }
+//     }
+//     return true
+// }
+// console.log(ascending([1,3,5,4,5]))
+
+// function descending(arr){
+//     for(let i=0;i<arr.length-1;i++){
+//         if(arr[i]<arr[i+1]){
+//             return false
+//         }
+//     }
+//     return true
+// }
+// console.log(descending([5,4,2,1,3]))
+
+// console.log(null === '')//false
+// console.log(null == '')//false
+// console.log(undefined === 0)//false
+// console.log(undefined == 0)//false
+// console.log(undefined===undefined)//true
+// console.log(undefined == undefined)//true
+// console.log(null === null)//true
+// console.log(null == null)//true
+
+//21.Sum of All Numeric Values in a Single Object
+
+// let obj = {x: 10, b: 20, c: 30, d: 40}; 
+// // Expected output: 100 (10 + 20 + 30 + 40)
+// let sum=0
+// for(let key in obj){
+//     sum+=obj[key]
+// }
+// console.log(sum)
+
+//22.Multiply All Values by a Given Factor in an Array of Objects
+// let arr = [{x: 2, y: 4}, {a: 3, b: 6}]
+// let factor = 3
+// let newArr=[]
+// for(let obj of arr){
+//     for(let key in obj){
+//         obj[key]=obj[key]*factor
+//     }
+//     newArr.push(obj)
+// }
+// console.log(newArr)
+
+//23. Find the Total Count of Properties in an Array of Objects
+
+// let arr = [{x: 10, b: 20}, {c: 30, d: 40}, {e: 50, f: 70}];
+// // Expected output: 6 (each object has 2 properties)
+// let count=0
+// for(let obj of arr){
+//     for(let key in obj){
+//         count++
+//     }
+// }
+// console.log(count)
+
+//24.Check if Object Properties Are Equal Across All Objects
+// let arr = [{x: 10}, {x: 10}, {x: 10}];
+// let output=[]
+// // Expected output: true
+// for(let obj of arr){
+//     for(let key in obj){
+//         output.push(obj[key])
+//     }
+// }
+// console.log(output)
+// const trueFalse=output.every((val)=>{
+//     return val==10
+// })
+// console.log(trueFalse)
+
+//25. Find the Key with the Maximum Value in an Object
+
+// let obj = {a: 5, b: 10, c: 15};
+// // Expected output: "c" (since 15 is the maximum value)
+// let max=""
+// let maxValue=0
+// for(let key in obj){
+//     if(obj[key]>maxValue){
+//         maxValue=obj[key]
+//         max=key
+//     }
+// }
+// console.log(max)
+// console.log(maxValue)
+
+//26. Find the Common Keys Across Multiple Objects
+// let arr = [{a: 10, b: 20,c:40}, {a: 30, b: 40}, {a: 50, b: 60,c:50}];
+// let keys=Object.keys(arr[0])
+
+// for(let i=1;i<arr.length;i++){
+//     keys=keys.filter(key=>key in arr[i])
+// }
+// console.log(keys)
+
+// //27.Merge Two Arrays of Objects
+// let arr1 = [{a: 10, b: 20}, {c: 30}];
+// let arr2 = [{b: 40, d: 50}, {a: 60}];
+// let mergingTwoArrays=[...arr1,...arr2]
+// console.log(mergingTwoArrays)
+
+//28.Find the Median of Values Across Multiple Objects.Median means find the middle value
+// let arr = [{x: 10, b: 20}, {c: 30, d: 40}, {e: 50, f: 70}];
+// // Expected output: 30 (median value of all values in the objects)
+// let values=[]
+// for(let obj of arr){
+//     for(let key in obj){
+//         values.push(obj[key])
+//     }
+// }
+// console.log(values)
+// let median
+// let length=values.length
+// console.log(length)
+// if(length%2!==0){
+// median=values[Math.floor(length/2)]
+// }else{
+// median=(values[length/2-1]+values[length/2])/2
+// }
+// console.log(median)
+
+//29.Group Object Properties Based on Their Data Type
+
+// let obj = {a: 10, b: "hello", c: true, d: 20, e: "world"};
+//Expected output: {number: [10, 20], string: ["hello", "world"], boolean: [true]}
+// let object={}
+// for(let key in obj){
+//     let type=typeof obj[key]
+//     if(!object[type]){
+//         object[type]=[]
+//     }
+//     object[type].push(obj[key])
+// }
+// console.log(object)
+
+//31.Remove key from objects in an Array
+// let arr = [{a: 10, b: 20}, {c: 30, b: 40}, {d: 50, b: 60}];
+// let keyToRemove = 'b';
+// // Expected output: [{a: 10}, {c: 30}, {d: 50}]
+// for(let obj of arr){
+//     for(let key in obj){
+//         if(key==keyToRemove){
+//             delete obj[key]
+//         }
+//     }
+// }
+// console.log(arr)
+
+//32.check if a given object contains any negative values
+
+// let obj = {x: -10, y: 20, z: 30};
+// // Expected output: true (since -10 is a negative value)
+// let check=false
+// for(let key in obj){
+//     if(obj[key] < 0){
+//         check=true
+//         break
+//     }
+// }
+// console.log(check)
+
+//33. Calculate the Product of Even Numbers in an Array of Objects
+// let arr = [{x: 2, y: 3}, {a: 4, b: 5}, {m: 6, n: 7}];
+// let product=1
+// // Expected output: 48 (2 * 4 * 6 = 48)
+// for(let obj of arr){
+//     for(let key in obj){
+//         if(obj[key]%2==0){
+//             product*=obj[key]
+//         }
+//     }
+// }
+// console.log(product)
