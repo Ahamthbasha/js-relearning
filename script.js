@@ -2922,3 +2922,22 @@ let text='My name is Sathish'
 //     }
 // }
 // console.log(product)
+
+// let abc = [{ab: [{i: {e: [78, 89 ]}}]} , {ab: [{j: {e: [78, 89 ]}}]}, {ab: [{h: {e: [78, 89 ]}}]}]
+// let value=[]
+
+// for(let obj of abc){
+//     for(let key in obj){
+//         value.push(...Object.values(obj[key][0]))
+//     }
+// }
+// console.log(value)
+// let sum=0
+// for(let obj of value){
+//     for(let key in obj){
+//         sum+=obj[key][0]+obj[key][1]
+//     }
+// }
+// console.log(sum)
+
+//let basha = [{"7" : {g : [8, 9]}}, {"5" : {g : [8, 9]}}, {"0" : {g : [8, 9]}}, {"4" : {g : [8, 9]}}]
