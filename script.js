@@ -2375,19 +2375,19 @@ let text='My name is Sathish'
 //object
 
 
-const nestedArray = [
-    { "ab": 2 },
-    [
-        { "bf": 3 }
-    ],
-    { "df": 5 },
-    [
-        { "gh": 1 },
-        [
-            { "ij": 4 }
-        ]
-    ]
-];
+// const nestedArray = [
+//     { "ab": 2 },
+//     [
+//         { "bf": 3 }
+//     ],
+//     { "df": 5 },
+//     [
+//         { "gh": 1 },
+//         [
+//             { "ij": 4 }
+//         ]
+//     ]
+// ];
 // let values=[]
 // for(let i=0;i<nestedArray.length;i++){
 //     if(Array.isArray(nestedArray[i])){
@@ -2421,3 +2421,321 @@ const nestedArray = [
 
 // let sum=values.reduce((acc,cur)=>acc+cur)
 // console.log(sum)
+
+//6-1-2025
+
+//1.find the sum of the given array of object
+
+// const BC = [5, 6, 7, 2, {a: 9}]
+//  let sum=0
+//  for(let i of BC){
+//      if(typeof i=="number"){
+//         sum=sum+i
+//      }else if(typeof i=="object"){
+//         let obj=Object.values(i)[0]
+//            sum+=obj
+        
+//      }
+//  }
+//  console.log(sum)
+
+//2.find the sum and learning here
+
+// let arr=[{ab:1},{bc:2},{cd:3}]
+// let sum=0
+// for(let i of arr){
+//     sum+=Object.values(i)//it will return like[1][2][3].When you add it js will convert it into string.you will get (0123).
+// }
+// console.log(sum)
+
+// let arr=[{ab:1},{bc:2},{cd:3}]
+// let sum=0
+// for(let i of arr){
+//     sum+=Object.values(i)[0]
+// }
+// console.log(sum)
+
+//3.sum of object values
+
+// let arr = [{x: 10}, {y: 20}, {z: 30}];
+// let sum=0
+// for(let i of arr){
+//     sum+=Object.values(i)[0]
+// }
+// console.log(sum)
+
+//4.Create a program that concatenates all the keys of the objects in the array into a single string.
+// let arr = [{a: 1}, {b: 2}, {c: 3}];
+// let keys=""
+// for(let i of arr){
+//     keys+=Object.keys(i).join("")
+// }
+// console.log(keys)
+
+//5.Write a program that counts the total number of properties across all objects in the array.It includes the dupllicates
+// let arr = [{name: 'Alice'}, {age: 25}, {location: 'NYC'}];
+// let properties=[]
+// for(let i of arr){
+//     properties.push(...Object.keys(i))
+// }
+// console.log(properties)
+// let totalCount=properties.length
+// console.log(totalCount)
+
+//it does not includes the duplicates
+
+// let arr = [{name: 'Alice'}, {age: 25}, {location: 'NYC'}];
+// let properties=[]
+// for(let i of arr){
+//     properties.push(...Object.keys(i))
+// }
+// let unique=new Set(properties)
+// let totalCount=unique.size
+// console.log(totalCount)
+
+//6.Find the maximum value from the object
+
+// let arr = [{age: 20}, {age: 30}, {age: 25}];
+
+// let max=0
+
+// for(let i of arr){
+//     let value=Object.values(i)[0]
+//     if(value>max){
+//         max=value
+//     }
+// }
+// console.log(max)
+
+//7.Write a function that takes an array of objects, and for each object, creates a new object where the key and value are swapped.
+// let arr = [{name: 'Alice'}, {age: 25}];
+// // Output: [ { Alice: 'name' }, { '25': 'age' } ]
+
+// function swap(arr){
+//     return arr.map((obj)=>{
+//         let newObj={}
+//         for(let i in obj){
+//             newObj[obj[i]]=i
+//         }
+//         return newObj
+//     })
+// }
+
+// console.log(swap(arr))
+
+//8.Write a program that checks if any object in the array contains a specific key (e.g., "name").\
+
+//let arr = [{name: 'Alice'}, {age: 25}, {location: 'NYC'}];
+// let keyToFind='name'
+// let key=[]
+// for(let i of arr){
+//     key.push(...Object.keys(i))
+// }
+// console.log(key)
+// console.log(key.includes(keyToFind))
+
+//optimized solution
+// let key='age'
+// for(let i of arr){
+//     if((Object.keys(i)).includes(key)){
+//         console.log("key found")
+//         break
+//     }
+// }
+
+//9.Write a program that sums the values of a specific property ("amount") in an array of objects.
+
+//let arr = [{amount: 100}, {salary: 200}, {amount: 300}];
+// let property='amount'
+// let sum=0
+// for(let i of arr){
+//     if(Object.keys(i)==property){
+//         sum+=Object.values(i)[0]
+//     }
+// }
+// console.log(sum)
+
+//optimized solutions
+
+// let property='amount'
+// let sum=0
+// for(let i of arr){
+//     if(i.hasOwnProperty(property)){
+//         sum+=i[property]
+//     }
+// }
+// console.log(sum)
+
+//10.Create a program that filters all objects in the array where the value of the "status" key is "active".
+
+// let arr = [{status: 'active'}, {status: 'inactive'}, {status: 'active'}];
+// let statusActive=[]
+// for(let i of arr){
+//     if(Object.values(i)[0]=='active'){
+//         statusActive.push(i)
+//     }
+// }
+// console.log(statusActive)
+
+//11.Write a program to convert the array of objects into a single array of values, where each object is flattened into its value.
+
+// let arr = [{x: 5}, {y: 10}, {z: 15}];
+// let k=0
+// for(let i of arr){
+//     arr[k]=Object.values(i)[0]
+//     k++
+// }
+// console.log(arr)
+
+//12.Write a program that groups the objects in the array by the "category" key.
+// let arr = [
+//     {category: 'Fruit', item: 'Apple'},
+//     {category: 'Vegetable', item: 'Carrot'},
+//     {category: 'Fruit', item: 'Banana'}
+//   ];
+
+  //output should be look like this
+// {
+//   Fruit: [
+//     {category: 'Fruit', item: 'Apple'},
+//     {category: 'Fruit', item: 'Banana'}
+//   ],
+//   Vegetable: [
+//     {category: 'Vegetable', item: 'Carrot'}
+//   ]
+// }
+
+// let grouped={}
+
+// for(let i of arr){
+//     let category=i.category
+//     if(!grouped[category]){
+//         grouped[category]=[]
+//     }
+//     grouped[category].push(i)
+// }
+// console.log(grouped)
+
+//13.Sum of All Values Across Multiple Objects
+// let arr = [{x: 10, b: 20}, {c: 30, d: 40}, {e: 50, f: 70}];
+// let sum=0
+// for(let i of arr){
+//     sum+=Object.values(i)[0]+Object.values(i)[1]
+// }
+// console.log(sum)//220
+
+//14. Write a program that multiplies each numeric value in the objects by a given factor (e.g., 2). Return a new array of objects where each value is multiplied by the factor.
+
+
+// let arr = [{x: 10, b: 20}, {c: 30, d: 40}, {e: 50, f: 70}];
+// for(let obj of arr){
+//     console.log(obj)//gives the entire object
+//     for(let key in obj){
+//         console.log(`key:${key}`)//keys
+//         console.log(`values:${obj[key]}`)//values
+//     }
+// }
+
+// let arr = [{x: 10, b: 20}, {c: 30, d: 40}, {e: 50, f: 70}];
+// let factor = 2;
+// let newArr=[]
+
+// for(let obj of arr){
+//     let newObj={}
+//     for(let key in obj){
+//         newObj[key]=obj[key]*factor
+//     }
+//     newArr.push(newObj)
+// }
+// console.log(newArr)
+
+//15.:Find the Average of All Values Across Objects
+// let arr = [{x: 10, b: 20}, {c: 30, d: 40}, {e: 50, f: 70}];
+// let sum=0
+// let count=0
+// for(let obj of arr){
+//     for(let key in obj){
+//         sum+=obj[key]
+//         count++
+//     }
+// }
+// let average=sum/count
+// console.log(average)//36.666666666666664
+
+//16.Find the Maximum and Minimum Values Across All Objects
+
+// let arr = [{x: 10, b: 20}, {c: 5, d: 40}, {e: 50, f: 70}];
+
+// let max=-Infinity
+// let min=Infinity
+
+// for(let obj of arr){
+//     for(let key in obj){
+//         if(obj[key]>max){
+//             max=obj[key]
+//         }
+//         if(obj[key]<min){
+//             min=obj[key]
+//         }
+//     }
+// }
+// console.log(max)
+// console.log(min)
+
+//17.Subtract Values Between Two Objects
+
+// let obj1 = {x: 10, b: 20, c: 30};
+// let obj2 = {x: 5, b: 10, c: 15};
+// //expected output
+// //{ x: 5, b: 10, c: 15 }
+
+// let result={}
+
+// for(let key in obj1){
+//     result[key]=obj1[key]-obj2[key]
+// }
+// console.log(result)
+
+//18.Compute the Product of All Values in a Single Object
+// let obj = {x: 2, b: 3, c: 4};
+// let product=1
+// for(let key in obj){
+//     product*=obj[key]
+// }
+// console.log(product)
+
+//19.Compute the Product of All Values in a Single Object
+// let arr = [{x: 10, b: 20}, {x: 30, b: 40}, {x: 50, b: 60}];
+// let newObj={}
+
+// for(let obj of arr){
+//     for(let key in obj){
+//         if(newObj[key]){
+//             newObj[key]+=obj[key]
+//         }else{
+//             newObj[key]=obj[key]
+//         }
+//     }
+// }
+// console.log(newObj)
+
+//20.Group Values Based on Range
+// let arr = [{x: 5, b: 8}, {x: 15, b: 18}, {x: 25, b: 28}, {x: 35, b: 38}];
+// let grouped = {};
+
+// function getRange(value){
+//     let rangeStart=Math.floor(value/10)*10
+//     let rangeEnd=rangeStart+9
+//     return `${rangeStart}-${rangeEnd}`
+// }
+
+// for(let obj of arr){
+//     for(let key in obj){
+//         let range=getRange(obj[key])
+//         if(!grouped[range]){
+//             grouped[range]=[]
+//         }
+//         grouped[range].push(obj)
+//     }
+// }
+// console.log(grouped)
