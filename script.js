@@ -2941,3 +2941,536 @@ let text='My name is Sathish'
 // console.log(sum)
 
 //let basha = [{"7" : {g : [8, 9]}}, {"5" : {g : [8, 9]}}, {"0" : {g : [8, 9]}}, {"4" : {g : [8, 9]}}]
+
+//write a program which print even or odd no
+
+// function test(limit){
+//     for(let i=1;i<=10;i++){
+//         if(i%2==0){
+//             console.log(i,"even")
+//         }else{
+//             console.log(i,"odd")
+//         }
+//     }
+// }
+// test(10)
+
+//sum the limit which is divisible by 2 and 7
+
+// function sum(limit){
+//     let sum=0
+//     for(let i=1;i<=limit;i++){
+//         if(i%2==0 || i%7==0){
+//             sum+=i
+//         }
+//     }
+//     return sum
+// }
+// console.log(sum(20))
+
+//testing object.keys and object.entries and for in loop
+
+// const person = {
+//     name : 'basha',
+//     age : 35
+// }
+
+// for(let key in person){
+//     console.log(key)
+//     console.log(person[key])
+// }
+// console.log(Object.keys(person))
+// console.log(Object.entries(person))
+//console.log(Object.values(person))
+
+//array methods
+
+// const num=[3,4]
+
+// console.log(num.push(5,6))
+// console.log(num)
+
+// num.unshift(1,2)
+// console.log(num)
+
+// num.splice(3,0,'hi','hello')
+// console.log(num)//[ 1, 2, 3, 'hi', 'hello', 4, 5, 6 ]
+
+// num.splice(3,4,'a','b')
+// console.log(num)//[ 1, 2, 3, 'a', 'b', 6 ]
+
+// const arr = [1,2,3,4,5,1,4]
+
+// console.log(arr.indexOf(2))
+// console.log(arr.indexOf('a'))
+// console.log(arr.lastIndexOf(1))
+// console.log(arr.includes(5))
+// console.log(arr.includes('a'))
+
+//const arr=[1,2,3,4,5]
+
+// for(let num of arr){
+//     console.log(num)
+// }
+
+// arr.forEach((n,i)=>{
+//     console.log(n,i)
+// })
+
+//join
+
+// const array = [1,2,3,"prabhu"]
+// const result=array.join(",")
+// console.log(typeof result)
+
+//sort
+
+// const arr3=[3,1,2]
+// console.log(arr3.sort())
+// arr3.sort((a,b)=>b-a)
+// console.log(arr3)
+
+// const arr4 = [
+//     {name:'mani'},
+//     {name:'anbu'},
+//     {name:'pranav'}
+// ]
+//ascending order
+// arr4.sort((a, b) => {
+//     if (a.name > b.name) return 1;//a should appear after b
+//     if (a.name < b.name) return -1;//a should appear before b
+//     return 0;
+// });
+
+// console.log(arr4)
+
+//descending order
+
+// arr4.sort((a,b)=>{
+//     if(a.name > b.name) return -1
+//     if(a.name < b.name) return 1
+//     return 0
+// })
+// console.log(arr4)
+
+//Array.from({},())
+
+// const result=Array.from({length:100},(_,i)=>i+1)
+// console.log(result)
+
+//convert the given into binary format
+
+//first approach
+// const givenNumber=29
+// const binaryNumber=givenNumber.toString(2)
+// console.log(binaryNumber)
+
+//second approach
+
+// function findBinary(n){
+//     let result=""
+//     if(n==0){
+//         return 0
+//     }
+//     while(n>0){
+//         result=(n%2)+result
+//         n=Math.floor(n/2)
+//     }
+//     return result
+// }
+
+// console.log(findBinary(29))
+
+//call apply and bind
+
+// const person={
+//     name:"basha",
+//     age:35,
+//     greet:function(message){
+//         console.log(`my name is ${this.name} and my age is ${this.age}.You got a message ${message}`)
+//     }
+// }
+
+// const person1={
+//     name:"Ahamath",
+//     age:30
+// }
+
+// person.greet.call(person1,"good morning")
+// person.greet.apply(person1,["hello"])
+// const output=person.greet.bind(person1,"greeting")
+// output()
+
+//callback
+
+// function myName(name,fn){
+//     console.log(`hey ${name}`)
+//     fn()
+// }
+
+// function display(){
+//     console.log(`thank for coming`)
+// }
+
+// myName("ahamathbasha",display)
+
+//another callback
+
+// function addTwoNumber(a,b,fn){
+//     const output=a+b
+//     fn(output)
+// }
+// function display(result){
+//     console.log(result)
+// }
+
+// addTwoNumber(5,5,display)
+
+//callback hell
+
+
+// function step1(cb){
+//     console.log("step1 completed")
+//     cb()
+// }
+
+// function step2(cb){
+//     console.log("step2 completed")
+//     cb()
+// }
+
+// function step3(cb){
+//     console.log("step3 completed")
+//     cb()
+// }
+
+// step1(()=>{
+//     step2(()=>{
+//         step3(()=>{
+//             console.log("All steps are completed")
+//         })
+//     })
+// })
+
+//call by value makes the copy of the variable.The changes does not affect the original variable
+
+// let num=10
+
+// function callValue(num){
+//     num=20
+//     return num
+// }
+// console.log(num)
+// console.log(callValue(num))
+// console.log(num)
+//here the changes made in the function does not affect the original
+
+//call by reference
+
+// let num=[1,2,3,4]
+
+// function test(num){
+//     num.push(5)
+//     return num
+// }
+// console.log(test(num))
+// console.log(num)
+//the changes made in the function affect the original
+
+//constructor function or generator function
+
+// function* multiplies(number){
+//     let n=1
+//     while(true){
+//         yield n*number
+//         n++
+//     }
+// }
+// const multiplicationTwo=multiplies(2)
+// for(let i=1;i<=20;i++){
+//     console.log(multiplicationTwo.next().value)
+// }
+
+//constructor or generator function
+
+// function* test(){
+//     for(let i=1;i<=100;i++){
+//         yield i
+//     }
+// }
+
+// const result=test()
+
+// for(let i=1;i<=40;i++){
+//     console.log(result.next().value)
+// }
+// console.log(result.next().value)
+
+
+//count no of duplicates in the array
+
+// const array = [1,2,2,3,4,5,5,6,7,7,8]
+
+// function countDuplicates(array){
+//     let count=0
+//     for(let i=0;i<array.length;i++){
+//         for(let j=i+1;j<array.length;j++){
+//             if(array[i]==array[j]){
+//                 count++
+//             }
+//         }
+//     }
+//     return count
+// }
+// console.log(countDuplicates(array))
+
+//remove duplicates elements from the given array
+
+//const array = [1,2,2,3,4,5,5,6,7,7,8]
+//new Set
+// const unique=[...new Set(array)]
+// console.log(unique)
+
+//modify it without using another array
+// for(let i=0;i<array.length;i++){
+//     for(let j=i+1;j<array.length;j++){
+//         if(array[i]==array[j]){
+//             array.splice(j,1)
+//             j--
+//         }
+//     }
+// }
+// console.log(array)
+
+//normal function
+
+// function add(a,b,c){
+//     return a+b+c
+// }
+// console.log(add(1,2,3))
+
+//currying function
+
+// function add(a){
+//     return function(b){
+//         return function(c){
+//             return a+b+c
+//         }
+//     }
+// }
+// console.log(add(1)(2)(3))
+
+//default parameter
+
+// function add(a,b,c=10){
+//     return a+b+c
+// }
+// console.log(add(1,2))
+
+//rest parameter
+
+// function sum(...num){
+//     return num.reduce((acc,cur)=>acc+cur)
+// }
+// console.log(sum(...[1,2,3,4,5]))
+
+//if you do
+
+// function sum(...num){
+//     return num.flat().reduce((acc,cur)=>acc+cur)
+// }
+// console.log(sum([1,2,3,4,5]))
+
+//factory function
+
+// function personalDetails(name,age,colour){
+//     return{
+//         name:name,
+//         age:age,
+//         colour:colour,
+//         isAlive:true,
+//         greet:function(){
+//             return `my name is ${this.name} and the age is ${this.age} old`
+//         }
+//     }
+// }
+
+// let person1=personalDetails("ahamathbasha",20,"red")
+// console.log(person1)
+// console.log(person1.greet())
+
+//fizzbuzz
+
+// function fizzbuzz(num){
+//     if(typeof num !== "number"){
+//         return NaN
+//     }
+//     if(num%3==0 && num%5==0){
+//         return 'fizzbuzz'
+//     }
+//     if(num%3==0){
+//         return 'fizz'
+//     }
+//     if(num%5==0){
+//         return 'buzz'
+//     }
+// }
+// console.log(fizzbuzz("false"))
+
+//for in loop
+// const person={
+//     name:"John",
+//     age:25,
+//     city:"new york"
+// }
+// for(let key in person){
+//     console.log(key)
+//     console.log(person[key])
+// }
+
+//constructor function
+
+// function personalDetails(name,age){
+//     this.name=name
+//     this.age=age
+//     this.greet=function(){
+//         return `name is ${this.name} and i am ${this.age} years old`
+//     }
+// }
+
+// let person1=new personalDetails("ahamathbasha",20)
+// //console.log(person1)
+// console.log(person1.greet())
+
+//generator function
+
+// function* printNumbers(){
+//     for(let i=0;i<=100;i++){
+//         yield i
+//     }
+// }
+
+// let result=printNumbers()
+// console.log(result)
+// for(let i of result){
+//     console.log(i)
+// }
+
+//currying function is also higher order function
+
+// function multiply(n1){
+//     return function(n2){
+//         return n1*n2
+//     }
+// }
+// console.log(multiply(1)(2))
+
+//lexical scope
+
+// function outer(){
+//     let x="10"
+//     function inner(){
+//         console.log(x)
+//     }
+//     inner()
+// }
+// outer()
+
+//nullishcoalescingOperator
+
+// let number=null
+// let value=10
+
+// let result=number??value
+// console.log(result)
+
+//nullish coalescing operator in js
+
+// const person={
+//     name:"basha",
+//     address:{
+//         city:"chennai"
+//     }
+// }
+
+// let person1=person.address?.pincode??123456
+// console.log(person1)
+
+//object cloning based on the object.assign method and spread method
+
+// const person={
+//     name:"basha",
+//     age:21,
+//     greet:function(){
+//         return `my name is ${this.name} and age is ${this,age}`
+//     }
+// }
+
+// const person1=Object.assign({city:"tvm"},person)
+// const person2={...person}
+// console.log(person1)
+// console.log(person2)
+
+//Different kinds of object methods
+// const person={
+//     name:'ahamathbasha',
+//     age:20,
+//     address:{
+//         city:"chennai"
+//     }
+// }
+
+// Object.freeze(person)
+// delete person.name
+// person.age=30
+//persson.pincode=606900
+// person.address.city="tvm"//nested object is changeable
+// console.log(person)
+
+// Object.seal(person)
+// delete person.name
+// person.age=30
+// person.pincode=606900
+// console.log(person)//values only modifiable
+
+// Object.preventExtensions(person)
+// delete person.name
+// person.age=30
+// person.pincode=606901
+// console.log(person)//new properties can not be added
+
+//optional chaining
+
+// const personOne = {
+//     name : 'prabhu',
+//     age : 20,
+//     address:{
+//         city : 'chennai',
+//     }
+// }
+
+// console.log(personOne.address?.city?.pin?.code)//undefined
+// console.log(personOne.address.city.pin.code)//Without optional chaining.It will give error
+
+
+//write a program where the user give index and where the element is placed(offset)
+
+// const array = [1, 2, 3, 4];
+
+// function move(num,index,offset){
+//     let temp=num[index]
+//     num[index]=num[offset]
+//     num[offset]=temp
+//     return num
+// }
+
+// console.log(move(array,1,2))
+
+// let a = [{"7" : {g : [8, 9]}}, {"5" : {g : [8, 9]}}, {"0" : {g : [8, 9]}}, {"4" : {g : [8, 9]}}]
+// let sum=0
+// for(let obj of a){
+//     for(let key in obj){
+//     sum+=Object.values(obj[key]).flat()[0]+Object.values(obj[key]).flat()[1]
+//     }
+// }
+// console.log(sum)
