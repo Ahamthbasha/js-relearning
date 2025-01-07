@@ -3474,3 +3474,34 @@ let text='My name is Sathish'
 //     }
 // }
 // console.log(sum)
+
+// Write a JavaScript program to display the current day and time in the following format.
+// Sample Output : Today is : Tuesday.
+// Current time is : 10 PM : 30 : 38
+
+let date=new Date()
+let day=date.getDay()
+let dayList=["sunday","monday","tuesday","wednesday","Thursday","friday","saturday","sunday"]
+let hours=date.getHours()
+let minutes=date.getMinutes()
+let seconds=date.getSeconds()
+let amPM=(hours>=12)?"PM":"AM"
+hours=hours>=12?hours-12:hours
+
+if(hours == 0 && amPM == "AM"){
+    if(minutes==0 && seconds==0){
+        amPM="midnight"
+    }else{
+        amPM="AM"
+    }
+}
+
+if(hours == 0 && amPM=="PM"){
+    if(minutes==0 && seconds==0){
+        amPM="NOON"
+    }else{
+        amPM="PM"
+    }
+}
+console.log(`Today is: ${dayList[day]}`)
+console.log(`current time is: ${hours} ${amPM} : ${minutes} : ${seconds}`)
