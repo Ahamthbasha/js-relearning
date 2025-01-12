@@ -217,6 +217,7 @@ const generator=multiply(2)
 for(let i=1;i<=10;i++){
     console.log(generator.next().value)
 }
+
 //another example
 function* multiply(n){
 let m=1
@@ -3479,29 +3480,387 @@ let text='My name is Sathish'
 // Sample Output : Today is : Tuesday.
 // Current time is : 10 PM : 30 : 38
 
-let date=new Date()
-let day=date.getDay()
-let dayList=["sunday","monday","tuesday","wednesday","Thursday","friday","saturday","sunday"]
-let hours=date.getHours()
-let minutes=date.getMinutes()
-let seconds=date.getSeconds()
-let amPM=(hours>=12)?"PM":"AM"
-hours=hours>=12?hours-12:hours
+// let date=new Date()
+// let day=date.getDay()
+// let dayList=["sunday","monday","tuesday","wednesday","Thursday","friday","saturday","sunday"]
+// let hours=date.getHours()
+// let minutes=date.getMinutes()
+// let seconds=date.getSeconds()
+// let amPM=(hours>=12)?"PM":"AM"
+// hours=hours>=12?hours-12:hours
 
-if(hours == 0 && amPM == "AM"){
-    if(minutes==0 && seconds==0){
-        amPM="midnight"
-    }else{
-        amPM="AM"
-    }
+// if(hours == 0 && amPM == "AM"){
+//     if(minutes==0 && seconds==0){
+//         amPM="midnight"
+//     }else{
+//         amPM="AM"
+//     }
+// }
+
+// if(hours == 0 && amPM=="PM"){
+//     if(minutes==0 && seconds==0){
+//         amPM="NOON"
+//     }else{
+//         amPM="PM"
+//     }
+// }
+// console.log(`Today is: ${dayList[day]}`)
+// console.log(`current time is: ${hours} ${amPM} : ${minutes} : ${seconds}`)
+
+// let promise1=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("abcd")
+//     },1000)
+// })
+
+// let promise2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         reject("abcd")
+//     },500)
+// })
+//  Promise.race([promise1,promise2])
+//  .then((resolve)=>{
+//     console.log(resolve)
+//  })
+//  .catch((reject)=>{
+//     console.log(reject)
+//  })
+
+// let promise1=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve('resolved promise')
+//     },1000)
+// })
+
+// let promise2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         reject("rejected promise")
+//     },500)
+// })
+
+// Promise.allSettled([promise1,promise2])
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+//call
+// function greet(greet){
+//     return `${greet} ${this.name}`
+// }
+
+// const person={
+//     name:"ahamathbasha"
+// }
+
+// console.log(greet.call(person,"good morning"))
+
+//apply
+
+// function display(greeting1,greeting2){
+//     return `${greeting1} ${this.name} ${greeting2}`
+// }
+
+// const person={
+//     name:"vetrimaaran"
+// }
+
+// console.log(display.apply(person,["hello","have a good day"]))
+
+//bind
+
+// function greet(greeting){
+//     return `${greeting} ${this.name}`
+// }
+
+// const person={
+//     name:'ahamathbasha',
+// }
+
+// const greeting=greet.bind(person,"hello")
+// console.log(greeting())
+
+//deep freeze
+
+// const person={
+//     name:"ahamathbasha",
+//     address:{
+//         city:"madurai"
+//     }
+// }
+// function deepFreeze(obj){
+//     let propNames=Object.getOwnPropertyNames(obj)
+//     for(let key of propNames){
+//         let value=obj[key]
+//         if(value && typeof value === 'object'){
+//             deepFreeze(value)
+//         }
+//     }
+//     return Object.freeze(obj)
+// }
+// deepFreeze(person)
+
+// person.address.city="tvm"
+// console.log(person)
+
+//nullish coalescing
+
+// let username
+// let displayName=username??"pk"
+// console.log(displayName)
+
+//Promise.all
+
+// let promise1=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("promise1 rejected")
+//     },1000)
+// })
+
+// let promise2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("promise2 resolved")
+//     })
+// })
+
+// Promise.all([promise1,promise2])
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+//optional chaining
+
+// const obj={
+//     name:'basha',
+//     job:'developer'
+// }
+
+//console.log(obj.address.name)
+// console.log(obj.address?.name?.code?.hello)
+
+//promise.any
+
+// let promise1=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         reject("promise1")
+//     },1000)
+// })
+
+// let promise2=new Promise((resolve,reject)=>{
+//     setTimeout(()=>{
+//         resolve("promise2")
+//     },1500)
+// })
+
+// Promise.any([promise1,promise2])
+// .then((resolve)=>{
+//     console.log(resolve)
+// })
+// .catch((reject)=>{
+//     console.log(reject)
+// })
+
+//let arr = [1,2,3,4]
+// arr.reverse()
+// console.log(arr)
+// arr.reverse()
+// console.log(arr)
+// arr.reverse((a,b)=>b-a)
+// console.log(arr)
+// let reversedArr=[]
+// for(let i=arr.length-1;i>=0;i--){
+//     reversedArr.push(arr[i])
+// }
+// console.log(reversedArr)
+
+//reverse a string
+
+// let s="hello"
+// s=s.split("").reverse().join("")
+// console.log(s)
+
+//shadowing
+
+// let outerVar="i am outside"
+
+// function outside(){
+//     let outerVar="i am inner"
+//     return outerVar
+// }
+
+// console.log(outside())
+// console.log(outerVar)
+
+//write a program that take the argument and sum it
+
+// function checkSum(s){
+//     let sum=0
+//     for(let i=0;i<s.length;i++){
+//         if(typeof s[i] == 'number'){
+//             sum+=s[i]
+//         }
+//     }
+//     return sum
+// }
+
+// let s=[1,'3',obj={},function(){},5]
+// console.log(checkSum(s))
+
+//find unique
+
+// let arr=[1,2,3,1,2,3,5,6,8,6]
+
+// let set=[...new Set(arr)]
+// console.log(set)
+
+//delete the duplicates
+
+// for(let i=0;i<arr.length;i++){
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i]==arr[j]){
+//             arr.splice(j,1)
+//             j--
+//         }
+//     }
+// }
+// console.log(arr)
+
+// let withoutDuplicate=[]
+// for(let i=0;i<arr.length;i++){
+//     let flag=1
+//     for(let j=i+1;j<arr.length;j++){
+//         if(arr[i]==arr[j]){
+//             flag++
+//         }
+//     }
+//     if(flag==1 && !withoutDuplicate.includes(arr[i])){
+//         withoutDuplicate.push(arr[i])
+//     }
+// }
+// console.log(withoutDuplicate)
+
+//callback
+
+// function moviename(fn){
+//    return fn()
+// }
+
+// function nameIs(){
+//     return `retro`
+// }
+
+// console.log(moviename(nameIs))
+
+//exception handling
+
+// let jsonString = '{"name": "John", "age": 30}'; // Valid JSON
+// let invalidJsonString = '{"name": "John", "age": 30'; // Invalid JSON (missing closing brace)
+
+// try{
+// let user=JSON.parse(jsonString)
+// console.log(user)
+// let user2=JSON.parse(invalidJsonString)
+// }catch(error){
+// console.log(error)
+// }finally{
+// console.log("parsing attempt completed")
+// }
+
+//factorial
+
+// function fact(n){
+//     let sum=0
+//     for(let i=1;i<=n;i++){
+//         sum=sum+i
+//     }
+//     return sum
+// }
+
+// console.log(fact(5))
+
+//print the fibonocci series
+
+// function fibonocci(limit){
+//     let a=0
+//     let b=1
+//     console.log(a)
+//     console.log(b)
+//     for(let i=2;i<=limit;i++){
+//         let c=a+b
+//         console.log(c)
+//         a=b
+//         b=c
+//     }
+// }
+
+// console.log(fibonocci(10))
+
+//countFrequency
+
+// const arr = [4,5,6,4,3,66,44,9]
+
+// let count={}
+
+// for(let i of arr){
+//     if(count[i]){
+//         count[i]++
+//     }else{
+//         count[i]=1
+//     }
+// }
+// console.log(count)
+
+//callback hell
+
+// function firstCallback(callback){
+//     setTimeout(()=>{
+//         console.log("first")
+//     },1000)
+//     callback()
+// }
+// function secondCallback(callback){
+//     setTimeout(()=>{
+//         console.log("second")
+//     },500)
+//     callback()
+// }
+// firstCallback(()=>{
+//     secondCallback(()=>{
+//         console.log("task completed")
+//     })
+// })
+
+//factory functions
+
+// function personalDetails(name,age,city){
+//     return {
+//         name:name,
+//         age:age,
+//         city:city
+//     }
+// }
+
+// const person1=personalDetails("ahamathbasha",25,"madurai")
+// console.log(person1)
+
+
+//define a variable in a function.Use that variable in other functions to perform mathematical operation
+
+function variable(){
+    let a=10
+    let b=20
+    let c=30
+    return {a,b,c}
 }
 
-if(hours == 0 && amPM=="PM"){
-    if(minutes==0 && seconds==0){
-        amPM="NOON"
-    }else{
-        amPM="PM"
-    }
+function operation(fn){
+    const {a,b,c}=fn()
+    console.log(a+b+c)
 }
-console.log(`Today is: ${dayList[day]}`)
-console.log(`current time is: ${hours} ${amPM} : ${minutes} : ${seconds}`)
+
+operation(variable)
